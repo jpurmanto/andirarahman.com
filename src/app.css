@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap');
+	:root {
+		--text: #251313;
+		--background: #edd8c4;
+		--primary: #6c0d0b;
+		--secondary: #732926;
+		--accent: #c09482;
+		&.dark {
+			--text: #cdb7a7;
+			--background: #160909;
+			--primary: #570505;
+			--secondary: #421414;
+			--accent: #cdb7a7;
+		}
+	}
+	html {
+		& body {
+			@apply bg-background text-primary dark:text-text;
+		}
+	}
+}
