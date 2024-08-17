@@ -12,12 +12,16 @@
 	let { children }: Props = $props();
 </script>
 
+<svelte:head>
+	<title>Andira Rahman</title>
+</svelte:head>
+
 <ModeWatcher />
 
 <main class="flex h-dvh flex-col md:flex-row">
 	<!-- Navigation Bar -->
 	<nav
-		class="flex h-auto justify-between bg-primary selection:bg-accent selection:text-primary md:h-dvh md:flex-col dark:border-b dark:border-b-accent dark:bg-background md:dark:border-r md:dark:border-secondary"
+		class="flex h-auto justify-between bg-primary selection:bg-accent selection:text-primary md:h-dvh md:flex-col dark:border-b dark:border-b-accent dark:bg-background md:dark:border-r md:dark:border-accent"
 	>
 		<!-- Logo -->
 		<a href="/#hero" class="self-center p-2">
@@ -41,14 +45,14 @@
 			</button>
 			<div class="flex flex-col text-center">
 				<a
-					href="/#about"
+					href="/#works"
 					class="block bg-secondary p-4 font-semibold text-background transition-all duration-300 hover:brightness-125 md:px-2 dark:text-text"
-					>About</a
+					>Works</a
 				>
 				<a
-					href="/#works"
+					href="/#about"
 					class="block bg-accent p-4 font-semibold text-text transition-all duration-300 selection:bg-primary selection:text-accent hover:brightness-125 md:px-2 dark:text-background"
-					>Works</a
+					>About</a
 				>
 			</div>
 		</div>
