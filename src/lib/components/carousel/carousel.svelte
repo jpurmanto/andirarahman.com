@@ -27,7 +27,7 @@
 			.scrollSnapList()
 			.map(
 				(i) =>
-					`<button class="size-8 rounded-full border-2 border-accent hover:brightness-125"></button>`
+					`<button class="md:size-8 size-6 rounded-full border-2 border-accent hover:brightness-125"></button>`
 			)
 			.join('');
 		dotsContainer.childNodes.forEach((child, idx) => {
@@ -49,14 +49,14 @@
 </script>
 
 <div
-	class="embla flex h-full w-full flex-col justify-between space-y-4 overflow-hidden bg-primary p-4 dark:border-y dark:border-r dark:border-accent dark:bg-background"
+	class="embla flex h-full w-full flex-col justify-between space-y-4 overflow-hidden bg-primary p-4 dark:border dark:border-accent dark:bg-background md:dark:border-l-0"
 >
 	<!-- Fullscreen Button -->
 	<div class="flex justify-end">
 		<Button.Root
 			class=" rounded-full border border-accent p-2 transition-all duration-300 hover:brightness-125"
 		>
-			<Fullscreen class="size-6 text-accent" />
+			<Fullscreen class="size-4 text-accent md:size-6" />
 		</Button.Root>
 	</div>
 	<div class="embla__viewport w-full overflow-hidden" bind:this={viewport}>
@@ -73,13 +73,13 @@
 				class=" rounded-full border border-accent p-2 transition-all duration-300 hover:brightness-125"
 				onclick={() => embla.scrollPrev(false)}
 			>
-				<ChevronLeft class="size-6 text-accent" />
+				<ChevronLeft class="size-4 text-accent md:size-6" />
 			</Button.Root>
 			<Button.Root
 				class=" rounded-full border border-accent p-2 transition-all duration-300 hover:brightness-125"
 				onclick={() => embla.scrollNext(false)}
 			>
-				<ChevronRight class="size-6 text-accent" />
+				<ChevronRight class="size-4 text-accent md:size-6" />
 			</Button.Root>
 		</div>
 		<div class="flex gap-2" bind:this={dotsContainer}></div>
