@@ -24,7 +24,7 @@
 		class="flex h-auto justify-between bg-primary selection:bg-accent selection:text-primary md:h-dvh md:flex-col dark:border-b dark:border-b-accent dark:bg-background md:dark:border-r md:dark:border-accent"
 	>
 		<!-- Logo -->
-		<a href="/#hero" class="self-center p-2">
+		<a href="/#hero" class="self-center p-2 transition-all duration-150 hover:brightness-125">
 			<h1 class=" text-lg font-bold text-background md:text-2xl lg:text-3xl dark:text-accent">
 				Andira Rahman
 			</h1>
@@ -50,9 +50,9 @@
 					>Works</a
 				>
 				<a
-					href="/#about"
+					href="/#contact"
 					class="block bg-accent p-4 font-semibold text-text transition-all duration-300 selection:bg-primary selection:text-accent hover:brightness-125 md:px-2 dark:text-background"
-					>About</a
+					>Contact</a
 				>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 
 	<ScrollArea.Root class="relative max-h-dvh w-full selection:bg-accent selection:text-primary">
 		<!-- Content -->
-		<ScrollArea.Viewport class="h-full w-full scroll-smooth">
+		<ScrollArea.Viewport class="h-full w-full snap-y scroll-smooth">
 			<ScrollArea.Content>
 				{@render children()}
 			</ScrollArea.Content>

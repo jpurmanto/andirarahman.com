@@ -1,3 +1,8 @@
 import Carousel from './carousel.svelte';
 
-export { Carousel };
+type ImageData = {
+    src: string;
+    alt?: string;
+};
+
+export { Carousel, type ImageData };

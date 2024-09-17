@@ -1,15 +1,15 @@
-<script lang="ts" generics="T">
-	import { cn } from '$lib/utils';
+<script lang="ts">
 	import type { Snippet } from 'svelte';
 	import EmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType } from 'embla-carousel';
-
 	import { Button } from 'bits-ui';
 	import { ChevronLeft, ChevronRight, Fullscreen } from 'lucide-svelte';
+	import { type ImageData } from '.';
+
 
 	type Props = {
-		data: T[];
+		data: ImageData[];
 		class?: string;
-		item: Snippet<[T]>;
+		item: Snippet<[ImageData]>
 	};
 
 	let { class: className, data, item }: Props = $props();
@@ -32,19 +32,24 @@
 			.join('');
 		dotsContainer.childNodes.forEach((child, idx) => {
 			if (idx === 0) {
-				(child as HTMLButtonElement).classList.add('brightness-150');
+				(child as HTMLButtonElement).classList.add('brightness-200');
 			}
 			child.addEventListener('click', () => embla.scrollTo(idx));
 		});
 
-		embla.on('select', () => {
+		embla.on('select', onSelect);
+
+		// return clean-up arrow function
+		return () => {
+			embla.off('select', onSelect);
+		};
+
+		function onSelect() {
 			let prev = dotsContainer.childNodes[embla.previousScrollSnap()] as HTMLButtonElement;
 			let current = dotsContainer.childNodes[embla.selectedScrollSnap()] as HTMLButtonElement;
-			current.classList.add('brightness-150');
-			prev.classList.remove('brightness-150');
-		});
-		// return clean-up arrow function
-		return () => {};
+			current.classList.add('brightness-200');
+			prev.classList.remove('brightness-200');
+		}
 	});
 </script>
 
@@ -53,11 +58,12 @@
 >
 	<!-- Fullscreen Button -->
 	<div class="flex justify-end">
-		<Button.Root
+		<!-- <Button.Root
+			type="button"
 			class=" rounded-full border border-accent p-2 transition-all duration-300 hover:brightness-125"
 		>
 			<Fullscreen class="size-4 text-accent md:size-6" />
-		</Button.Root>
+		</Button.Root> -->
 	</div>
 	<div class="embla__viewport w-full overflow-hidden" bind:this={viewport}>
 		<div class="embla__container flex items-center">
