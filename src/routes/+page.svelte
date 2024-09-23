@@ -96,7 +96,7 @@
 				algorithm of the critical path method into code, created a form for users to input each data
 				points for the algorithm to use, and the end result which was a critical path diagram and an
 				interactive Gantt chart of the broken down schedule data.
-				<a href="http://cpm-app.vercel.app/cpm" target="_blank" rel="noopener noreferrer"
+				<a href="https://cpm.andirarahman.com/cpm" target="_blank" rel="noopener noreferrer"
 					>Check out the app here.</a
 				>
 			</p>
